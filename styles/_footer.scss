@@ -1,0 +1,75 @@
+.footer{
+    display: flex;
+    width: 100%;
+    height: 170px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-size: 800px, 170px;
+    background-image: url("../Imagenes/cuadradosWeb2.png");
+    
+    
+    &__textrow1{
+        font-family: Minecraft;
+        font-style: normal;
+        font-size: 18px;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+
+    &__textrow2{
+        font-family: Minecraft;
+        font-style: normal;
+        font-size: 18px;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+
+    &__column2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__textrow3{
+        font-family: Minecraft;
+        font-style: normal;
+        font-size: 18px;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+
+    &__textrow4{
+        font-family: Minecraft;
+        font-style: normal;
+        font-size: 18px;
+        align-items: center;
+        text-align: center;
+        color: white; 
+    }
+
+    &__images{
+        width: 204px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    &__image1{
+        width: 46px;
+        height: 46px;
+    }
+
+    &__image2{
+        width: 46px;
+        height: 46px;
+    }
+    &__image3{
+        width: 46px;
+        height: 46px;
+    }   
+    
+}

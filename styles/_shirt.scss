@@ -1,0 +1,16 @@
+.shirt{
+
+    &__frame{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background: 100% 100%;
+        background-image: url("../Imagenes/marcosGrandesTienda2.png");
+
+        &__content{
+            
+        }
+    }
+}

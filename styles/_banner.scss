@@ -1,0 +1,39 @@
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px;
+    background-size: 800px, 113px;
+    background-image: url("../Imagenes/cuadradosWeb.png"); //githubPage
+    //background-image: url(/Imagenes/cuadradosWeb.png); pagina html
+    
+}
+
+.banner__image{
+
+    max-width: 84px;
+    max-height: 84px;
+    width: 100%;
+    
+}
+
+.banner__title{
+    margin: 0px;
+    margin-left: 20px;
+    font-family: Minecraft;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    color: #000000;
+}
+
+@media screen and (max-width: 800px) {
+    .banner{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+}

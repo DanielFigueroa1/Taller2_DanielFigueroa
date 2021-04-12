@@ -1,0 +1,33 @@
+@import "fullPage";
+//@import "title"; SOLO ACTUALIZA EL SCSS CUANDO SE BORRA LOS IMPORT
+@import "banner";
+@import "navigation";
+@import "imageNav";
+@import "history";
+@import "about";
+@import "gallery";
+@import "support";
+@import "contact";
+@import "footer";
+@import "shirt";
+
+
+body{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    background-color: black;
+    overflow-x:hidden 
+
+}
+
+html{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; 
+    overflow-x:hidden 
+}
+

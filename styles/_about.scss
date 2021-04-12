@@ -1,0 +1,92 @@
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 530px;
+    margin-top: -1px;
+    background-color: #000000;
+
+    &__title{
+        position: absolute;
+        font-family: Minecraft;
+        font-style: normal;
+        top: 720px;
+        font-weight: 500;
+        font-size: 36px;
+        color: white;
+    }
+    
+    &__articles{
+        
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        width: 730px;
+        height: 400px;
+        
+        
+
+            &__fight{
+            
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            
+            }
+
+            &__survive{
+            
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            
+            }
+
+            &__advance{
+            
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            
+            }
+
+                &__title{
+                    font-family: Minecraft;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 24px;
+                    color: white;
+                }
+
+                &__image{
+                    width: 105px;
+                    
+                    
+            
+                }
+
+                &__frame{
+                    display: flex;
+                    width: 200px;
+                    height: 180px;
+                    background-size: 200px 180px;
+                    background-image: url("../Imagenes/marcosGrandes2.png");
+                    justify-content: center;
+                    align-items: center;
+                }
+                &__text{
+            
+                    font-family: Minecraft;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    color: white;
+                    text-align: center;
+                }
+    }
+}
