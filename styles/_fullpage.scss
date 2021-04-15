@@ -1,5 +1,6 @@
 .fullPage { //esto no se toca y seria para pagina web
     display: flex;
+    max-width: 800px;
     width: 100%;  
     flex-direction: column;
     background-color: black;
