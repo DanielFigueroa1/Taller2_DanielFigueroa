@@ -25,23 +25,19 @@
             flex-direction: column;
             max-width: 200px;
 
-            &__1{
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                flex-direction: column;
-                &__image{
-                    max-width: 300px;
-                    width: 100%;
-                }
-
-            }
         }
     }
 
-    &__product__img{
-        max-width: 276px;
-        max-height: 184px;
+    &__product {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__img{
+            max-width: 276px;
+            max-height: 184px;
+        }
+        
     }
 
 }
