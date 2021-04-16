@@ -12,29 +12,51 @@
     <form class="productForm">
     
         <label class="productForm__label" for="name">Name</label>
-        <input class="productForm__input" id="name" type="text" placeholder="Name of the product">
+        <input class="productForm__input" id="name" type="text" placeholder="Name of the product" name="name">
 
         <label class="productForm__label">
             Price
-        <input class="productForm__input" type="number">
+        <input class="productForm__input" type="number" name="price">
         </label>
 
         <label class="productForm__label">Sizes</label>
 
         <label class="productForm__label productForm__label--checkbox">
-            <input class="productForm__checkbox" type="checkbox">
+            <input class="productForm__checkbox" type="checkbox" name="size_s">
                 Size S
         </label >
         <label class="productForm__label productForm__label--checkbox">
-            <input class="productForm__checkbox" type="checkbox">
+            <input class="productForm__checkbox" type="checkbox" name="size_m">
                 Size M
         </label>
         <label class="productForm__label productForm__label--checkbox">
-            <input class="productForm__checkbox" type="checkbox">
+            <input class="productForm__checkbox" type="checkbox" name="size_l">
                 Size L
         </label>
+        
+        <label class="productForm__label">Color</label>
+
+        <label class="productForm__label productForm__label--checkbox">
+            <input class="productForm__checkbox" type="checkbox" name="colorW">
+                White
+        </label>
+        <label class="productForm__label productForm__label--checkbox">
+            <input class="productForm__checkbox" type="checkbox" name="colorB">
+                Black
+        </label>
+
+        <label class="productForm__label">Type</label>
+
+        <label class="productForm__label">Popularity</label>
+        <label class="productForm__label">
+            1 baja - 5 Alta
+        <input class="productForm__input" type="number" name="popularity">
+        </label>
+
 
         <button class="productForm__button" type="submit">Send</button>
     </form>
+
+    <script src="./scripts/productForm.js"></script>
 </body>
 </html>
