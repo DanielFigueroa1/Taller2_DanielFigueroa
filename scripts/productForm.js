@@ -37,7 +37,7 @@ productForm.addEventListener("submit", function(event) {
         sizes: [],
         color: [],
         type: [],
-        popularity: parseFloat(productForm.price.value)
+        popularity: parseFloat(productForm.popularity.value)
     };
     //chequeo tamaños
     if(productForm.size_s.checked) product.sizes.push("s");
@@ -45,12 +45,18 @@ productForm.addEventListener("submit", function(event) {
     if(productForm.size_l.checked) product.sizes.push("l");
 
     //chequeo color
-    if(productForm.colorW.checked) product.sizes.push("white");
-    if(productForm.colorB.checked) product.sizes.push("black");
+    if(productForm.colorW.checked) product.color.push("white");
+    if(productForm.colorB.checked) product.color.push("black");
     //chequeo tipo de mercancia
-    if(productForm.shirt.checked) product.sizes.push("camisa");
-    if(productForm.sweater.checked) product.sizes.push("sweater");
-    if(productForm.mug.checked) product.sizes.push("taza");
-    if(productForm.sticker.checked) product.sizes.push("sticker");
-    if(productForm.pin.checked) product.sizes.push("pin");
+    if(productForm.shirt.checked) product.type.push("camisa");
+    if(productForm.sweater.checked) product.type.push("sweater");
+    if(productForm.mug.checked) product.type.push("taza");
+    if(productForm.sticker.checked) product.type.push("sticker");
+    if(productForm.pin.checked) product.type.push("pin");
+
+    console.log(product);
+
+    db.collection("products").add(product).then(function () {
+        console.log("document added", docRef.id)
+    });
 });
