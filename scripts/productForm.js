@@ -17,28 +17,32 @@ const productForm = document.querySelector(".productForm");
 productForm.addEventListener("submit", function(event) {
     event.preventDefault();
     console.log("name: ", productForm.name.value);
+    console.log("type: ", productForm.type.value);
     console.log("price: ", productForm.price.value);
     console.log("size s: ", productForm.size_s.value);
     console.log("size m: ", productForm.size_m.value);
     console.log("size l: ", productForm.size_l.value);
     console.log("colorW: ", productForm.colorW.value);
     console.log("colorB: ", productForm.colorB.value);
-    console.log("shirt: ", productForm.shirt.value);
-    console.log("sweater: ", productForm.sweater.value);
-    console.log("mug: ", productForm.mug.value);
-    console.log("sticker: ", productForm.sticker.value);
-    console.log("pin: ", productForm.pin.value);
     console.log("popularity: ", productForm.popularity.value);
     
 
     const product = {
         name: productForm.name.value,
+        type: productForm.type.value,
         price: parseFloat(productForm.price.value),
         sizes: [],
         color: [],
-        type: [],
         popularity: parseFloat(productForm.popularity.value)
+
     };
+
+    //chequeo de que el producto tenga la variable pedida nombre, precio y tipo
+    if(!productForm.name) return;
+    if(!productForm.type) return;
+    if(!productForm.price || product.price < 15000) return;
+    if(!productForm.popularity || product.popularity <1 || product.popularity <5) return;
+
     //chequeo tamaños
     if(productForm.size_s.checked) product.sizes.push("s");
     if(productForm.size_m.checked) product.sizes.push("m");
@@ -47,13 +51,6 @@ productForm.addEventListener("submit", function(event) {
     //chequeo color
     if(productForm.colorW.checked) product.color.push("white");
     if(productForm.colorB.checked) product.color.push("black");
-    //chequeo tipo de mercancia
-    if(productForm.shirt.checked) product.type.push("camisa");
-    if(productForm.sweater.checked) product.type.push("sweater");
-    if(productForm.mug.checked) product.type.push("taza");
-    if(productForm.sticker.checked) product.type.push("sticker");
-    if(productForm.pin.checked) product.type.push("pin");
-
     console.log(product);
 
     db.collection("products").add(product).then(function () {
