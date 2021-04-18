@@ -101,7 +101,7 @@ productForm.addEventListener("submit", function(event) {
     const file = productForm.image.files[0];
 
     var storageRef = firebase.storage().ref();
-    var fileRef = storageRef.child("./Imagenes/$(product.type)/$(file.name)");
+    var fileRef = storageRef.child("./Imagenes/$(product.type)/$(file.name)"); //PREGUNTAR AL PROFE QUE FALLA AQUI
 
     fileRef.put(file).then(function(snapshot) {
     console.log('Uploaded a blob or file!');
