@@ -46,27 +46,44 @@ productForm.addEventListener("submit", function(event) {
         name: productForm.name.value,
         type: productForm.type.value,
         price: parseFloat(productForm.price.value),
-        sizes: [],
-        color: [],
         popularity: parseFloat(productForm.popularity.value)
 
     };
 
+    switch(product.type){
+        case "shirt":
+            product.sizes = [];
+            if(productForm.size_s.checked) product.sizes.push("s");
+            if(productForm.size_m.checked) product.sizes.push("m");
+            if(productForm.size_l.checked) product.sizes.push("l");
+            product.color = [];
+            if(productForm.colorW.checked) product.color.push("white");
+            if(productForm.colorB.checked) product.color.push("black");
+            break;
+        case "sweater":
+            product.sizes = [];
+            if(productForm.size_s.checked) product.sizes.push("s");
+            if(productForm.size_m.checked) product.sizes.push("m");
+            if(productForm.size_l.checked) product.sizes.push("l");
+            product.color = [];
+            if(productForm.colorW.checked) product.color.push("white");
+            if(productForm.colorB.checked) product.color.push("black");
+    }
     //chequeo de que el producto tenga la variable pedida nombre, precio y tipo
     if(!productForm.name) return;
     if(!productForm.type) return;
     if(!productForm.price || product.price < 15000) return;
     if(!productForm.popularity || product.popularity <1 || product.popularity <5) return;
 
-    //chequeo tamaños
-    if(productForm.size_s.checked) product.sizes.push("s");
-    if(productForm.size_m.checked) product.sizes.push("m");
-    if(productForm.size_l.checked) product.sizes.push("l");
+    //chequeo tamaños se comentan porque ahora estan solo para el caso de camisa y sueter
+    //if(productForm.size_s.checked) product.sizes.push("s");
+    //if(productForm.size_m.checked) product.sizes.push("m");
+    //if(productForm.size_l.checked) product.sizes.push("l");
 
     //chequeo color
-    if(productForm.colorW.checked) product.color.push("white");
-    if(productForm.colorB.checked) product.color.push("black");
-    console.log(product);
+    //if(productForm.colorW.checked) product.color.push("white");
+    //if(productForm.colorB.checked) product.color.push("black");
+    //console.log(product);
 
     db.collection("products").add(product).then(function () {
         console.log("document added", docRef.id)
