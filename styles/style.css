@@ -834,6 +834,10 @@
   margin-top: 15px;
 }
 
+.productForm__img {
+  width: 400px;
+}
+
 .barraNavShop {
   display: -webkit-box;
   display: -ms-flexbox;

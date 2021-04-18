@@ -10,8 +10,11 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
   const db = firebase.firestore();
+  const storage = firebase.storage();
 
 const productForm = document.querySelector(".productForm");
+
+const productFormImg = document.querySelector(".productForm__img");
 
 const shirtFields = document.querySelector(".shirtFields");
 
@@ -27,6 +30,16 @@ productForm.type.addEventListener("change",function(){
             shirtFields.classList.remove("hidden");
             break; 
     }
+});
+
+productForm.image.addEventListener("change", function (){ //esto hace que se pueda previsualizar la imagen despues de elegirla
+    var reader = new FileReader();
+    reader.onload = function(event) {
+    productFormImg.classList.remove("hidden");
+    productFormImg.setAttribute("src", event.target.result);
+    //$('#blah').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(productForm.image.files[0]); // convert to base64 string
 });
 
 productForm.addEventListener("submit", function(event) {
@@ -83,7 +96,20 @@ productForm.addEventListener("submit", function(event) {
     //chequeo color
     //if(productForm.colorW.checked) product.color.push("white");
     //if(productForm.colorB.checked) product.color.push("black");
-    //console.log(product);
+
+    
+    const file = productForm.image.files[0];
+
+    var storageRef = firebase.storage().ref();
+    var fileRef = storageRef.child("./Imagenes/$(product.type)/$(file.name)");
+
+    fileRef.put(file).then(function(snapshot) {
+    console.log('Uploaded a blob or file!');
+    });
+
+    console.log(product); //dice todo lo del producto en la consola
+    console.log(productForm.image.files)
+    return; //debe quitarse esto para que se suba la info al firebase
 
     db.collection("products").add(product).then(function () {
         console.log("document added", docRef.id)

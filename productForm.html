@@ -66,6 +66,9 @@
         <input class="productForm__input" type="number" name="popularity">
         </label>
 
+        <img class="productForm__img hidden" src="">
+        <label class="productForm__label" for="image">Upload an image </label> <!--Donde se sube la imagen-->
+        <input id="image" class="productForm__input" name="image" type="file">
 
         <button class="productForm__button" type="submit">Send</button>
     </form>
@@ -73,6 +76,7 @@
     <!-- The core Firebase JS SDK is always required and must be listed first IMPORTANTE PONERLO ANTES DEL SCRIPT DE JAVA-->
 <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
 
 
     <script src="./scripts/productForm.js"></script>
