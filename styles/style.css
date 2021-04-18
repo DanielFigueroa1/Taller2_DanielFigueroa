@@ -979,6 +979,10 @@
   max-height: 184px;
 }
 
+.hidden {
+  display: none !important;
+}
+
 h1 {
   font-family: Minecraft;
   font-style: normal;

@@ -14,7 +14,7 @@
         <label class="productForm__label" for="name">Name</label>
         <input class="productForm__input" id="name" type="text" placeholder="Name of the product" name="name">
 
-        <label for="type" class="productForm__label">
+        <label for="type" class="productForm__label"> <!-- Creacion de lista de productos y las opciones que tiene-->
             Type of product
             <select id="type" class="productForm__input" name="type"> 
             <option value=""> Select a type</option>
@@ -29,6 +29,8 @@
             Price
         <input class="productForm__input" type="number" name="price">
         </label>
+
+        <div class="shirtFields hidden"> <!-- Categorias que solo tienen las camisas y sueteres -->
 
         <label class="productForm__label">Sizes</label>
 
@@ -56,7 +58,9 @@
                 Black
         </label>
 
-        <label class="productForm__label">Popularity</label>
+        </div>
+
+        <label class="productForm__label">Popularity</label> <!-- Categoria de popularidad -->
         <label class="productForm__label">
             1 baja - 5 Alta
         <input class="productForm__input" type="number" name="popularity">

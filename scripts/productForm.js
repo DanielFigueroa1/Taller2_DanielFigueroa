@@ -11,8 +11,23 @@ var firebaseConfig = {
 
   const db = firebase.firestore();
 
-
 const productForm = document.querySelector(".productForm");
+
+const shirtFields = document.querySelector(".shirtFields");
+
+productForm.type.addEventListener("change",function(){
+    console.log(productForm.type.value);
+    shirtFields.classList.add("hidden");
+    switch(productForm.type.value) {
+        case "shirt":
+            shirtFields.classList.remove("hidden");
+            break; 
+    
+        case "sweater":
+            shirtFields.classList.remove("hidden");
+            break; 
+    }
+});
 
 productForm.addEventListener("submit", function(event) {
     event.preventDefault();
