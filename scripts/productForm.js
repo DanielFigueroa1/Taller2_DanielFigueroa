@@ -86,13 +86,12 @@ productForm.addEventListener("submit", function(event) {
     if(!productForm.name) return;
     if(!productForm.type) return;
     if(!productForm.price || product.price < 15000) return;
-    if(!productForm.popularity || product.popularity <1 || product.popularity <5) return;
+    if(!productForm.popularity || product.popularity <1 || product.popularity >5) return;
 
     //chequeo tamaños se comentan porque ahora estan solo para el caso de camisa y sueter
     //if(productForm.size_s.checked) product.sizes.push("s");
     //if(productForm.size_m.checked) product.sizes.push("m");
     //if(productForm.size_l.checked) product.sizes.push("l");
-
     //chequeo color
     //if(productForm.colorW.checked) product.color.push("white");
     //if(productForm.colorB.checked) product.color.push("black");
@@ -101,17 +100,21 @@ productForm.addEventListener("submit", function(event) {
     const file = productForm.image.files[0];
 
     var storageRef = firebase.storage().ref();
-    var fileRef = storageRef.child("./Imagenes/$(product.type)/$(file.name)"); //PREGUNTAR AL PROFE QUE FALLA AQUI
+    var fileRef = storageRef.child(`./Imagenes/${product.type}/${file.name}`); //ya solucionado
 
     fileRef.put(file).then(function(snapshot) {
+        snapshot.ref,getDownloadURL().then((downloadURL) => {
+            product.imageUrl = downloadURL;
+            product.imageRef = snapshot.fullpath;
+        })
     console.log('Uploaded a blob or file!');
     });
 
     console.log(product); //dice todo lo del producto en la consola
     console.log(productForm.image.files)
-    return; //debe quitarse esto para que se suba la info al firebase
+    //return; //debe quitarse esto para que se suba la info al firebase
 
-    db.collection("products").add(product).then(function () {
+    db.collection("products").add(product).then(function (docRef) {
         console.log("document added", docRef.id)
     });
 });
