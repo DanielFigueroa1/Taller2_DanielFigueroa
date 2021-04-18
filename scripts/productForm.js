@@ -103,10 +103,10 @@ productForm.addEventListener("submit", function(event) {
     var fileRef = storageRef.child(`./Imagenes/${product.type}/${file.name}`); //ya solucionado
 
     fileRef.put(file).then(function(snapshot) {
-        snapshot.ref,getDownloadURL().then((downloadURL) => {
+        snapshot.ref.getDownloadURL().then((downloadURL) => {
             product.imageUrl = downloadURL;
             product.imageRef = snapshot.fullpath;
-        })
+        });
     console.log('Uploaded a blob or file!');
     });
 
