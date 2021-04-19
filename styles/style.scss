@@ -13,6 +13,10 @@
 @import "barraNavShop";
 @import "navShop";
 @import "shirt";
+@import "sweater";
+@import "sticker";
+@import "pin";
+@import "mug";
 @import "general";
 
 h1{
@@ -64,5 +68,6 @@ h4{
     font-weight: 500;
     font-size: 18px;
     line-height: 20px;
+    margin-top: -15px;
 }
 

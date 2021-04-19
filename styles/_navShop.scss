@@ -27,6 +27,13 @@
         justify-content: space-between;
         width: 100%;
 
+        &__content{
+        max-width: 240px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+            }
         }
     }
 

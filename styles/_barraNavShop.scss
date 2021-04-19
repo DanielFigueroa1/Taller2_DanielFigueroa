@@ -5,7 +5,7 @@
     width: 100%;
     height: 57px;
     background: #000000;
-    justify-content: space-evenly;
+    justify-content: space-around;
     font-family: Minecraft;
     font-style: normal;
     font-weight: 500;
@@ -13,4 +13,9 @@
     line-height: 26px;
     color: white;
 
+    &__login{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
 }

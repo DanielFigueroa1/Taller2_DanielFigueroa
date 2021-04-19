@@ -102,7 +102,7 @@ productForm.addEventListener("submit", function(event) {
     var storageRef = firebase.storage().ref();
     var fileRef = storageRef.child(`./Imagenes/${product.type}/${file.name}`); //ya solucionado
 
-    fileRef.put(file).then(function(snapshot) {
+    fileRef.put(file).then(function(snapshot) { //preguntar que pasa con mis fotos de porque no se ven
         snapshot.ref.getDownloadURL().then((downloadURL) => {
             product.imageUrl = downloadURL;
             product.imageRef = snapshot.fullpath;
