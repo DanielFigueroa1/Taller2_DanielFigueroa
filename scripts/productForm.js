@@ -100,21 +100,34 @@ productForm.addEventListener("submit", function(event) {
     const file = productForm.image.files[0];
 
     var storageRef = firebase.storage().ref();
-    var fileRef = storageRef.child(`./Imagenes/${product.type}/${file.name}`); //ya solucionado
+    var fileRef = storageRef.child(`./${product.type}/${file.name}`); //ya solucionado creando una referencia al storage, no necesita refenciar la localizacion del doc en el pc
 
-    fileRef.put(file).then(function(snapshot) { //preguntar que pasa con mis fotos de porque no se ven
+    let uploadTask = storageRef.child(`${product.type}/${file.name}`).put(file); //ya esta guardando la imagen en carpetas con el tipo de producto
+    uploadTask.on("state_changed", (snapshot)=>{ //funcion anonima el parentesis donde esta snapshot
+        let progress = ((snapshot.bytesTransfered/snapshot.totalBytes)*100)
+    }, (error)=>{
+        console.log("Falla al subir", error);
+    }, ()=>{
+        uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => { //aqui estoy obteniendo la imagen
+
+            db.collection("products").add({...product, URLimagen:downloadURL}).then(function (docRef) { //lo que le hice a product es desestructurar
+                console.log("document added", docRef.id)
+            });
+        });
+    }); //colocarle un observer gracias al on
+
+
+
+    /*fileRef.put(file).then(function(snapshot) { //preguntar que pasa con mis fotos de porque no se ven
         snapshot.ref.getDownloadURL().then((downloadURL) => {
             product.imageUrl = downloadURL;
             product.imageRef = snapshot.fullpath;
         });
     console.log('Uploaded a blob or file!');
-    });
+    });*/
 
     console.log(product); //dice todo lo del producto en la consola
     console.log(productForm.image.files)
     //return; //debe quitarse esto para que se suba la info al firebase
 
-    db.collection("products").add(product).then(function (docRef) {
-        console.log("document added", docRef.id)
-    });
 });
