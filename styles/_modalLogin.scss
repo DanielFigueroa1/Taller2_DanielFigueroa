@@ -1,0 +1,32 @@
+.modalLogin{
+    position: fixed; //absolute sirve para posicionar relativo al tamaño del primer padre que tenga posicion relativa
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 10px;
+
+    &__frame{
+        max-width: 730px;
+        max-height: 730px;
+        width: 100px;
+        background-image: url("../Imagenes/marcosGrandesTienda.png");
+
+        &__content{
+            
+            background-color: white;
+            
+            &__user{
+                font-family: Minecraft;
+                font-style: normal;
+                font-size: 24px;
+                color: #FFFFFF;
+                font-weight: 500;
+                line-height: 39px;
+                display: block;
+                margin-top: 10px;
+            }
+        }
+    }
+}

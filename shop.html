@@ -9,7 +9,11 @@
 </head>
 
 <body>
+    
     <main class="fullPage">
+
+        
+
         <header class="banner">
 
             <img class="banner__image" src="./Imagenes/iconoJuego.png">
@@ -21,12 +25,12 @@
         <nav class="barraNavShop">
 
             <article class="barraNavShop__back">
-                >Volver
+                <a href="index.html">>Volver</a>
             </article>
 
             <article class="barraNavShop__login">
                 <img src="./Imagenes/iconoUsuario.png">
-                Ingresar/Registrar
+                <a href="">Ingresar</a>/<a href="">Registrar</a>
             </article>
 
         </nav>
@@ -174,6 +178,19 @@
             </article>
         </footer>
         
+        <section class="modalLogin">
+            <div class="modalLogin__backdrop"></div>
+            <section class="modalLogin__frame">
+                <div class="modalLogin__frame__content">
+                <img src="./Imagenes/iconoUsuarioGrande.png">
+                    <label class="modalLogin__frame__content__user" for="user">Usuario</label>
+                    <input class="productForm__input" id="user" type="text" placeholder="User name" user="user">
+                    <label class="modalLogin__frame__content__user" for="password">Contraseña</label>
+                    <input class="productForm__input" id="password" type="text" placeholder="Password" password="password">
+                </div>
+            </section>
+        </section>
+
     </main>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>

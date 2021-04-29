@@ -1,15 +1,21 @@
 const list = document.querySelector(".list");
 let products = [{
-    URLimagen: "https://firebasestorage.googleapis.com/v0/b/web-store-deadbehind.appspot.com/o/sweater%2FsweaterZombie2W.png?alt=media&token=801b6d13-c7f2-4117-b223-c8303d43a28d",
+    URLimagen: "https://firebasestorage.googleapis.com/v0/b/web-store-deadbehind.appspot.com/o/shirt%2FshirtSkullW.png?alt=media&token=5da89ba6-5cae-41c1-b380-298449106247",
     color: ["white", "black"],
-    name: "Sueter zombie 1",
+    name: "Camisa Calavera",
     popularity: 5,
-    price: 40000,
+    price: 40000 ,
     sizes: ["s", "m", "l"],
-    type: "sweater",
+    type: "shirt",
 },
 {
-    
+    /*URLimagen: "https://firebasestorage.googleapis.com/v0/b/web-store-deadbehind.appspot.com/o/shirt%2FshirtSkullW.png?alt=media&token=5da89ba6-5cae-41c1-b380-298449106247",
+    color: ["white", "black"],
+    name: "Camisa Calavera",
+    popularity: 5,
+    price: 40000 ,
+    sizes: ["s", "m", "l"],
+    type: "shirt",*/
 }];
 
 function printElements(data) {
@@ -17,7 +23,7 @@ function printElements(data) {
         const data = element;
         const product = document.createElement("a");
             product.innerHTML = `
-            <img class="product__image" src="${data.URLimagen}" alt="">
+            <img class="shirt__product__img" src="${data.URLimagen}" alt="">
             <div class="product__name">
                 <h3> ${data.name}</h3>
                 <h4 class ="product__price"> ${data.price}</h4>
