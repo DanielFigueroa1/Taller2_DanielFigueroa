@@ -5,7 +5,7 @@ const productFormImg = document.querySelector(".productForm__img");
 
 const shirtFields = document.querySelector(".shirtFields");
 
-productForm.type.addEventListener("change",function(){
+productForm?.type.addEventListener("change",function(){
     console.log(productForm.type.value);
     shirtFields.classList.add("hidden");
     switch(productForm.type.value) {
@@ -19,17 +19,16 @@ productForm.type.addEventListener("change",function(){
     }
 });
 
-productForm.image.addEventListener("change", function (){ //esto hace que se pueda previsualizar la imagen despues de elegirla
+productForm?.image.addEventListener("change", function (){ //esto hace que se pueda previsualizar la imagen despues de elegirla
     var reader = new FileReader();
     reader.onload = function(event) {
     productFormImg.classList.remove("hidden");
     productFormImg.setAttribute("src", event.target.result);
-    //$('#blah').attr('src', e.target.result);
     }
     reader.readAsDataURL(productForm.image.files[0]); // convert to base64 string
 });
 
-productForm.addEventListener("submit", function(event) {
+productForm?.addEventListener("submit", function(event) {
     event.preventDefault();
     console.log("name: ", productForm.name.value);
     console.log("type: ", productForm.type.value);
@@ -72,7 +71,7 @@ productForm.addEventListener("submit", function(event) {
     //chequeo de que el producto tenga la variable pedida nombre, precio y tipo
     if(!productForm.name) return;
     if(!productForm.type) return;
-    if(!productForm.price || product.price < 15000) return;
+    if(!productForm.price || product.price < 5000) return;
     if(!productForm.popularity || product.popularity <1 || product.popularity >5) return;
 
     //chequeo tamaños se comentan porque ahora estan solo para el caso de camisa y sueter
