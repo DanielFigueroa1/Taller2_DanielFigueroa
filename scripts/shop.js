@@ -37,3 +37,22 @@ function printElements(data) {
 }
 
 printElements(products)
+
+const modalLoginUser = document.querySelector(".modal-Login-User"); //inicio login
+const modalLogin = document.querySelector(".modalLogin");
+
+function handleOpenModal (){
+
+    modalLogin.style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+function handleCloseModal(){
+    modalLogin.style.display = "none";
+}
+
+modalLogin.addEventListener("click", handleCloseModal);
+
+modalLoginUser.addEventListener("click", handleOpenModal); //fin login
+
+

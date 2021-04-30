@@ -1298,6 +1298,79 @@
   display: none !important;
 }
 
+.modalLogin {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  display: none;
+}
+
+.modalLogin__frame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  max-width: 730px;
+  max-height: 730px;
+  width: 100%;
+  height: 100%;
+  background-image: url("../Imagenes/marcosGrandesTienda.png");
+}
+
+.modalLogin__frame__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.modalLogin__frame__content__user {
+  font-family: Minecraft;
+  font-style: normal;
+  font-size: 24px;
+  color: #FFFFFF;
+  font-weight: 500;
+  line-height: 39px;
+  display: block;
+  margin-top: 10px;
+}
+
+.modalLogin__frame__content__cancel {
+  margin-top: -40px;
+  margin-bottom: 40px;
+  margin-left: -500px;
+}
+
+.modalLogin__frame__content__confirm {
+  margin-top: 40px;
+}
+
 h1 {
   font-family: Minecraft;
   font-style: normal;

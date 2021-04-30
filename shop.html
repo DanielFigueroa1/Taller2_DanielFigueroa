@@ -30,7 +30,7 @@
 
             <article class="barraNavShop__login">
                 <img src="./Imagenes/iconoUsuario.png">
-                <a href="">Ingresar</a>/<a href="">Registrar</a>
+                <p class="modal-Login-User" href="">Ingresar</p>/<p class="modal-Register-User">Registrar</p>
             </article>
 
         </nav>
@@ -178,15 +178,32 @@
             </article>
         </footer>
         
-        <section class="modalLogin">
+        <section class="modalLogin"> <!--Modal de login-->
             <div class="modalLogin__backdrop"></div>
             <section class="modalLogin__frame">
                 <div class="modalLogin__frame__content">
+                    <img class="modalLogin__frame__content__cancel" src="./Imagenes/publicidadCancel.png">
                 <img src="./Imagenes/iconoUsuarioGrande.png">
                     <label class="modalLogin__frame__content__user" for="user">Usuario</label>
                     <input class="productForm__input" id="user" type="text" placeholder="User name" user="user">
                     <label class="modalLogin__frame__content__user" for="password">Contraseña</label>
                     <input class="productForm__input" id="password" type="text" placeholder="Password" password="password">
+                    <img class="modalLogin__frame__content__confirm" src="./Imagenes/botonConfirmar.png">
+                </div>
+            </section>
+        </section>
+
+        <section class="modalRegister"> <!--Modal de Registro-->
+            <div class="modalRegister__backdrop"></div>
+            <section class="modalRegister__frame">
+                <div class="modalRegister__frame__content">
+                    <img class="modalRegister__frame__content__cancel" src="./Imagenes/publicidadCancel.png">
+                <img src="./Imagenes/iconoUsuarioGrande.png">
+                    <label class="modalRegister__frame__content__user" for="user">Usuario</label>
+                    <input class="productForm__input" id="user" type="text" placeholder="User name" user="user">
+                    <label class="modalRegister__frame__content__user" for="password">Contraseña</label>
+                    <input class="productForm__input" id="password" type="text" placeholder="Password" password="password">
+                    <img class="modalRegister__frame__content__confirm" src="./Imagenes/botonRegistrar.png">
                 </div>
             </section>
         </section>
