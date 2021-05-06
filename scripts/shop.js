@@ -45,34 +45,40 @@ const modalRegister = document.querySelector(".modalRegister");
 const loginCancel = modalLogin.querySelector(".modalLogin__frame__content__cancel")
 const registerCancel = modalRegister.querySelector(".modalRegister__frame__content__cancel")
 
-function handleOpenModal (i){
+function handleOpenModal (){
 
-    if (i==1){
     modalLogin.style.display = "block";
     document.body.style.overflow = "hidden";
-    }
-    if (i==2){
-        modalRegister.style.display = "block";
-        document.body.style.overflow = "hidden";
-        }
+    
 }
 
-function handleCloseModal(i){
-    if (i==1){
+function handleOpenModal2 (){
+
+    modalRegister.style.display = "block";
+    document.body.style.overflow = "hidden";
+    
+}
+
+function handleCloseModal(){
+    
         modalLogin.style.display = "none";
-    }
-    if (i==2){
-        modalRegister.style.display = "none";
-    }
+    
 }
 
-loginCancel.addEventListener("click", handleCloseModal(1));
-registerCancel.addEventListener("click", handleCloseModal(2));
+function handleCloseModal2(){
+    
+    modalRegister.style.display = "none";
+
+}
+
+loginCancel.addEventListener("click", handleCloseModal);
+registerCancel.addEventListener("click", handleCloseModal2);
 
 /*modalLoginUser.forEach(e => {
     e.addEventListener("click", handleOpenModal); //por cada elemento lo va a abrir
 }); si fuera a hacer un modal desde la misma clase*/ 
 
 modalLoginUser.addEventListener("click", handleOpenModal); //fin login
+modalRegisterUser.addEventListener("click", handleOpenModal2);
 
 
