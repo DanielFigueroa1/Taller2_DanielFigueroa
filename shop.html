@@ -47,6 +47,67 @@
 
         <section class="filters">
             <h1>Filtros</h1>
+            <label for="type" class="filters__label">Tipo de producto</label>
+            <select id="type" class="filters__input" name="type">
+                <option value="">Selecciona un tipo</option>
+                <option value="shirt">Camisa</option>
+                <option value="sweater">Sueter</option>
+            </select>
+
+            <label class="filters__Type">Tipos<br></label>
+
+            <label class="filters__Type filters__label--checkbox">
+            <input class="filters__checkbox" type="checkbox" name="Shirt">
+                Camisas
+            </label >
+            <label class="filters__Type filters__label--checkbox">
+            <input class="filters__checkbox" type="checkbox" name="Sweater">
+                Sueteres
+            </label>
+            <label class="filters__Type filters__label--checkbox">
+            <input class="filters__checkbox" type="checkbox" name="Mug">
+                Tazas
+            </label>
+            <label class="filters__Type filters__label--checkbox">
+            <input class="filters__checkbox" type="checkbox" name="Sticker">
+                Stickers
+                </label>
+            <label class="filters__Type filters__label--checkbox">
+                <input class="filters__checkbox" type="checkbox" name="Pin">
+                Pines
+            </label>
+
+            <label class="filters__Type"><br>Precios<br></label>
+
+            <label class="filters__Type filters__label--checkbox">
+                <input class="filters__checkbox" type="checkbox" name="-20000">
+                Menor a 20000
+            </label >
+            <label class="filters__Type filters__label--checkbox">
+            <input class="filters__checkbox" type="checkbox" name="-30000">
+                Menor a 30000
+            </label>
+            <input class="filters__checkbox" type="checkbox" name="+20000">
+                Mayor a 20000
+            </label >
+            <label class="filters__Type filters__label--checkbox">
+            <input class="filters__checkbox" type="checkbox" name="+30000">
+                Mayor a 30000
+            </label>
+
+            <label class="filters__Type"><br>Orden<br></label>
+
+            <label class="filters__Type filters__label--checkbox">
+                <input class="filters__checkbox" type="checkbox" name="lower">
+                Por precio mas bajo
+            </label >
+            <label class="filters__Type filters__label--checkbox">
+            <input class="filters__checkbox" type="checkbox" name="highest">
+                Por precio mas alto
+            </label>
+            <input class="filters__checkbox" type="checkbox" name="Popular">
+                Por popularidad
+            </label >
         </section>
 
         <section class="shirt"> <!--Seccion camisas-->
@@ -69,16 +130,10 @@
             <article class="sweater__frame">         
                 <div class="sweater__frame__content">
                     <img class="shop__Arrow" src="./Imagenes/flecha.png">
-                    <article class="sweater__product">
-                        <img class="sweater__product__img" src="./Imagenes/sweaterZombie.png">
-                        <h3> Sueter Zombie</h3>
-                        <h4>10000 col</h4>
-                    </article>
-                    <article class="sweater__product">
-                        <img class="sweater__product__img" src="./Imagenes/sweaterZombie2.png">
-                        <h3> Sueter Zombie 2</h3>
-                        <h4>10000 col</h4>
-                    </article>
+                    
+                    <section class="list">
+                        
+                    </section>
                     
                     <img class="shop__Arrow" src="./Imagenes/flecha2.png">
                 </div>
