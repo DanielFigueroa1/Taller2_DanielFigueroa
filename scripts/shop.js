@@ -53,12 +53,13 @@ function printElements(data) {
 
 printElements(products)
 
+/*
 const modalLoginUser = document.querySelector(".modal-Login-User"); //inicio logi, no se hizo dinamico, esto para recordar todo lo que toca hacer por no hacerlo dinamico
 const modalRegisterUser = document.querySelector(".modal-Register-User");
 const modalLogin = document.querySelector(".modalLogin");
 const modalRegister = document.querySelector(".modalRegister");
-const loginCancel = modalLogin.querySelector(".modalLogin__frame__content__cancel")
-const registerCancel = modalRegister.querySelector(".modalRegister__frame__content__cancel")
+const loginCancel = modalLogin.querySelector(".modalLogin__frame__content__cancel");
+//const registerCancel = modalRegister.querySelector(".modalRegister__frame__content__cancel");
 
 function handleOpenModal (){
 
@@ -87,22 +88,22 @@ function handleCloseModal2(){
 }
 
 loginCancel.addEventListener("click", handleCloseModal);
-registerCancel.addEventListener("click", handleCloseModal2);
+//registerCancel.addEventListener("click", handleCloseModal2);
 
 
-/*modalLoginUser.forEach(e => {
+modalLoginUser.forEach(e => {
     e.addEventListener("click", handleOpenModal); //por cada elemento lo va a abrir
-}); si fuera a hacer un modal desde la misma clase*/ 
+}); si fuera a hacer un modal desde la misma clase 
 
 modalLoginUser.addEventListener("click", handleOpenModal); //fin login
-modalRegisterUser.addEventListener("click", handleOpenModal2);
+modalRegisterUser.addEventListener("click", handleOpenModal2);*/
 
-filterOptions.type.addEventListener("change", function (){
+/*filterOptions.type.addEventListener("change", function (){ //inicio filtros
     console.log(filterOptions.type.value);
 
     db.collection("products")
     .where("type","==", filterOptions.type.value)
     .get()
     .then(handleCollectionResult);
-});
+});*/
 

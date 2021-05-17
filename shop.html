@@ -233,42 +233,51 @@
             </article>
         </footer>
         
-        <section class="modalLogin"> <!--Modal de login-->
+        <!--<section class="modalLogin"> //Modal de login
             <section class="modalLogin__frame">
                 <div class="modalLogin__frame__content">
                     <img class="modalLogin__frame__content__cancel" src="./Imagenes/publicidadCancel.png">
                 <img src="./Imagenes/iconoUsuarioGrande.png">
+                <form id="login">
                     <label class="modalLogin__frame__content__user" for="user">Usuario</label>
                     <input class="productForm__input" id="user" type="text" placeholder="User name" user="user">
                     <label class="modalLogin__frame__content__user" for="password">Contraseña</label>
                     <input class="productForm__input" id="password" type="text" placeholder="Password" password="password">
                     <img class="modalLogin__frame__content__confirm" src="./Imagenes/botonConfirmar.png">
+                </form>
                 </div>
             </section>
         </section>
 
-        <section class="modalRegister"> <!--Modal de Registro-->
+        <section class="modalRegister"> Modal de Registro
             <section class="modalRegister__frame">
                 <div class="modalRegister__frame__content">
                     <img class="modalRegister__frame__content__cancel" src="./Imagenes/publicidadCancel.png">
                 <img src="./Imagenes/iconoUsuarioGrande.png">
+                <form id="register">
                     <label class="modalRegister__frame__content__user" for="user">Usuario</label>
                     <input class="productForm__input" id="user" type="text" placeholder="User name" user="user">
+                    <label class="modalLogin__frame__content__user" for="user">Correo</label>
+                    <input class="productForm__input" id="mail" type="text" placeholder="User e-mail" mail="mail">
                     <label class="modalRegister__frame__content__user" for="password">Contraseña</label>
                     <input class="productForm__input" id="password" type="text" placeholder="Password" password="password">
-                    <img class="modalRegister__frame__content__confirm" src="./Imagenes/botonRegistrar.png">
+                    <img class="modalRegister__frame__content__confirm" src="./Imagenes/botonRegistrar.png" >
+                    <button type="submit">Send</button>
+                </form>
                 </div>
             </section>
-        </section>
+        </section>-->
 
     </main>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     
     <script src="./scripts/general.js"></script>
     <script src="./scripts/productForm.js"></script>
     <script src="./scripts/shop.js"></script>
+    <script src="./scripts/authmodal.js"></script>
 </body>
 
 </html>
