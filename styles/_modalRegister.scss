@@ -8,6 +8,11 @@
     padding: 10px;
     display: none;
 
+    .form{
+        width: 300px;
+        height: 500px;
+    }
+
     &__frame{
         display: flex;
             flex-direction: column;

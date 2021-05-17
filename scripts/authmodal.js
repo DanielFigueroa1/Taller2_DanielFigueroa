@@ -12,10 +12,9 @@ authModal.innerHTML = `
                     <input class="productForm__input" id="user" type="text" placeholder="User name" user="user">
                     <label class="modalLogin__frame__content__user" for="user">Correo</label>
                     <input class="productForm__input" id="mail" type="text" placeholder="User e-mail" mail="mail">
-                    <label class="modalRegister__frame__content__user" for="password">Contraseña</label>
+                    <label class="modalRegister__frame__content__user" for="password">Contrasena</label>
                     <input class="productForm__input" id="password" type="text" placeholder="Password" password="password">
-                    <img class="modalRegister__frame__content__confirm" src="./Imagenes/botonRegistrar.png" >
-                    <button type="submit">Send</button>
+                    <button type="submit" class="button__img">Confirmar</button>
                 </form>
                 </div>
             </section>
