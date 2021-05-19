@@ -62,17 +62,26 @@ h3{
     font-family: Minecraft;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 20px;  
 }
 h4{
     font-family: Minecraft;
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 20px;
     margin-top: -15px;
 }
 
+a{
+    margin-left: -50px;
+    display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            text-align: center;
+}
 
 

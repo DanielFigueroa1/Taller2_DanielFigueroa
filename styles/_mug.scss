@@ -7,6 +7,12 @@
     height: 470px;
     margin-bottom: 80px;
 
+    .list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     &__frame{
 
         display: flex;
@@ -25,6 +31,8 @@
             align-items: center;
             flex-direction: row;
             max-width: 200px;
+            
+            
 
         }
     }
@@ -34,6 +42,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
         &__img{
             max-width: 276px;
             max-height: 184px;

@@ -1,6 +1,7 @@
 const authModal = document.createElement("section");
 authModal.classList.add("modal");
 
+
 authModal.innerHTML = `
 <section class="modalRegister"> 
             <section class="modalRegister__frame">
@@ -9,11 +10,11 @@ authModal.innerHTML = `
                 <img src="./Imagenes/iconoUsuarioGrande.png">
                 <form id="register">
                     <label class="modalRegister__frame__content__user" for="user">Usuario</label>
-                    <input class="productForm__input" id="user" type="text" placeholder="User name" user="user">
+                    <input class="productForm__input" id="user" type="text" placeholder="User name" name="user">
                     <label class="modalLogin__frame__content__user" for="user">Correo</label>
-                    <input class="productForm__input" id="mail" type="text" placeholder="User e-mail" mail="mail">
+                    <input class="productForm__input" id="email" type="text" placeholder="User e-mail" name="email">
                     <label class="modalRegister__frame__content__user" for="password">Contrasena</label>
-                    <input class="productForm__input" id="password" type="text" placeholder="Password" password="password">
+                    <input class="productForm__input" id="password" type="password" placeholder="Password" name="password">
                     <button type="submit" class="button__img">Confirmar</button>
                 </form>
                 </div>
@@ -53,5 +54,35 @@ openModalLogin.addEventListener("click", function (){
 
 closeModal.addEventListener("click", function(){
     modalRegister.style.display= "none";
+});
+
+authModal.addEventListener("submit", function (event) { 
+event.preventDefault();
+console.log("submit") //prueba de funcionamiento button
+
+
+const user = document.querySelector(".user");
+const email = document.querySelector(".email");
+const password = document.querySelector(".password")
+
+if(isLogin) {
+
+} else {
+    firebaseConfig.auth().createUserEmailAndPassword(user, email, password)
+    .then((userCredential) => {
+        //signed in
+        var user = userCredential.user;
+        console.log(user);
+
+        db.collection("users").doc(user.uid).set({
+        user,
+        email: email,
+        password: password,
+        });
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+}
 });
 

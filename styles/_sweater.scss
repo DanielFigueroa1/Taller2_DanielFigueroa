@@ -10,6 +10,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        
     }
     
     &__frame{
@@ -39,6 +40,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
         &__img{
             max-width: 276px;
             max-height: 184px;
