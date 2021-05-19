@@ -53,12 +53,12 @@ function printElements(data) {
 
 printElements(products);
 
-/*filterOptions.type.addEventListener("change", function (){ //inicio filtros
+filterOptions.addEventListener("change", function (){ //inicio filtros
     console.log(filterOptions.type.value);
 
     db.collection("products")
     .where("type","==", filterOptions.type.value)
     .get()
     .then(handleCollectionResult);
-});*/
+});
 

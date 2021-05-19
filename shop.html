@@ -45,70 +45,61 @@
             </article>
         </section>
 
-        <section class="filters">
-            <h1>Filtros</h1>
-            <label for="type" class="filters__label">Tipo de producto</label>
-            <select id="type" class="filters__input" name="type">
-                <option value="">Selecciona un tipo</option>
-                <option value="shirt">Camisa</option>
-                <option value="sweater">Sueter</option>
-            </select>
+        <form class="filters">
+        <label for="type" class="productForm__label">Tipo de producto</label>
+        <select id="type" class="productForm__input" name="type">
+            <option value="">Selecciona una opción</option>
+            <option value="shirt">Camisas</option>
+            <option value="sweater">Sueters</option>
+            <option value="sticker">Stickers</option>
+            <option value="pin">Pines</option>
+            <option value="mug">Tazas</option>
+        </select>
 
-            <label class="filters__Type">Tipos<br></label>
+        <label class="productForm__label productForm__label--checkbox">
+            <input data-type="shirt" class="productForm__checkbox" type="checkbox" name="productFilter">
+            Camisas
+        </label>
+        <label class="productForm__label productForm__label--checkbox">
+        <input data-type="sweater" class="productForm__checkbox" type="checkbox" name="productFilter">
+            Sueters
+        </label>
+        <label class="productForm__label productForm__label--checkbox">
+            <input data-type="sticker" class="productForm__checkbox" type="checkbox" name="productFilter">
+            Sticker
+        </label>
+        <label class="productForm__label productForm__label--checkbox">
+            <input data-type="pin" class="productForm__checkbox" type="checkbox" name="productFilter">
+            Pines
+        </label>
+        <label class="productForm__label productForm__label--checkbox">
+            <input data-type="mug" class="productForm__checkbox" type="checkbox" name="productFilter">
+            Tazas
+        </label>
+    
+        <label for="price" class="productForm__label">Precio</label>
+        <select id="price" class="productForm__input" name="price">
+            <option value="">Selecciona una opción</option>
+            <option value="0">Menor a $ 20.000</option>
+            <option value="1">Menor a $ 30.000</option>
+            <option value="2">Mayor a $ 20.000</option>
+            <option value="3">Mayor a $ 30.000</option>
+        </select>
+    
+        <label for="order" class="productForm__label">Orden</label>
+        <select id="order" class="productForm__input" name="order">
+            <option value="">Selecciona una opción</option>
+            <option value="price_asc">Precio más bajo</option>
+            <option value="price_desc">Precio más alto</option>
+        </select>
 
-            <label class="filters__Type filters__label--checkbox">
-            <input class="filters__checkbox" type="checkbox" name="Shirt">
-                Camisas
-            </label >
-            <label class="filters__Type filters__label--checkbox">
-            <input class="filters__checkbox" type="checkbox" name="Sweater">
-                Sueteres
-            </label>
-            <label class="filters__Type filters__label--checkbox">
-            <input class="filters__checkbox" type="checkbox" name="Mug">
-                Tazas
-            </label>
-            <label class="filters__Type filters__label--checkbox">
-            <input class="filters__checkbox" type="checkbox" name="Sticker">
-                Stickers
-                </label>
-            <label class="filters__Type filters__label--checkbox">
-                <input class="filters__checkbox" type="checkbox" name="Pin">
-                Pines
-            </label>
-
-            <label class="filters__Type"><br>Precios<br></label>
-
-            <label class="filters__Type filters__label--checkbox">
-                <input class="filters__checkbox" type="checkbox" name="-20000">
-                Menor a 20000
-            </label >
-            <label class="filters__Type filters__label--checkbox">
-            <input class="filters__checkbox" type="checkbox" name="-30000">
-                Menor a 30000
-            </label>
-            <input class="filters__checkbox" type="checkbox" name="+20000">
-                Mayor a 20000
-            </label >
-            <label class="filters__Type filters__label--checkbox">
-            <input class="filters__checkbox" type="checkbox" name="+30000">
-                Mayor a 30000
-            </label>
-
-            <label class="filters__Type"><br>Orden<br></label>
-
-            <label class="filters__Type filters__label--checkbox">
-                <input class="filters__checkbox" type="checkbox" name="lower">
-                Por precio mas bajo
-            </label >
-            <label class="filters__Type filters__label--checkbox">
-            <input class="filters__checkbox" type="checkbox" name="highest">
-                Por precio mas alto
-            </label>
-            <input class="filters__checkbox" type="checkbox" name="Popular">
-                Por popularidad
-            </label >
-        </section>
+        <label for="popularity" class="productForm__label">Orden por popularidad</label>
+        <select id="popularity" class="productForm__input" name="popularity">
+            <option value="">Selecciona una opción</option>
+            <option value="hola">Popularidad más bajo</option>
+            <option value="chao">Popularidad más alto</option>
+        </select>
+        </form>
 
         <section class="shirt"> <!--Seccion camisas-->
             <h1>Camisas</h1>
@@ -116,8 +107,7 @@
                 <div class="shirt__frame__content">
                     <img class="shop__Arrow" src="./Imagenes/flecha.png">
                     
-                    <section class="list">
-                        
+                    <section class="list list-shirt">
                     </section>
 
                     <img class="shop__Arrow" src="./Imagenes/flecha2.png">
@@ -131,8 +121,7 @@
                 <div class="sweater__frame__content">
                     <img class="shop__Arrow" src="./Imagenes/flecha.png">
                     
-                    <section class="list">
-                        
+                    <section class="list list-sweater">
                     </section>
                     
                     <img class="shop__Arrow" src="./Imagenes/flecha2.png">
@@ -145,16 +134,9 @@
             <article class="sticker__frame">         
                 <div class="sticker__frame__content">
                     <img class="shop__Arrow" src="./Imagenes/flecha.png">
-                    <article class="sticker__product">
-                        <img class="sticker__product__img" src="./Imagenes/stickerCat.png">
-                        <h3> Stickers Gatos</h3>
-                        <h4>10000 col</h4>
-                    </article>
-                    <article class="sticker__product">
-                        <img class="sticker__product__img" src="./Imagenes/stickerSkull.png">
-                        <h3> Stickers calaveras</h3>
-                        <h4>10000 col</h4>
-                    </article>
+                    <section class="list list-sticker">
+
+                    </section>                    
                     
                     <img class="shop__Arrow" src="./Imagenes/flecha2.png">
                 </div>
@@ -166,16 +148,8 @@
             <article class="pin__frame">         
                 <div class="pin__frame__content">
                     <img class="shop__Arrow" src="./Imagenes/flecha.png">
-                    <article class="pin__product">
-                        <img class="pin__product__img" src="./Imagenes/pinCat.png">
-                        <h3> Pin Gato</h3>
-                        <h4>10000 col</h4>
-                    </article>
-                    <article class="pin__product">
-                        <img class="pin__product__img" src="./Imagenes/pinSkull.png">
-                        <h3> Pin Calavera</h3>
-                        <h4>10000 col</h4>
-                    </article>
+                    <section class="list list-pin">
+                    </section>
                     
                     <img class="shop__Arrow" src="./Imagenes/flecha2.png">
                 </div>
@@ -187,16 +161,8 @@
             <article class="mug__frame">         
                 <div class="mug__frame__content">
                     <img class="shop__Arrow" src="./Imagenes/flecha.png">
-                    <article class="mug__product">
-                        <img class="mug__product__img" src="./Imagenes/mugCat.png">
-                        <h3> Taza Gato</h3>
-                        <h4>10000 col</h4>
-                    </article>
-                    <article class="mug__product">
-                        <img class="mug__product__img" src="./Imagenes/mugSkull.png">
-                        <h3> Taza Calavera</h3>
-                        <h4>10000 col</h4>
-                    </article>
+                    <section class="list list-mug">
+                    </section>
                     
                     <img class="shop__Arrow" src="./Imagenes/flecha2.png">
                 </div>
