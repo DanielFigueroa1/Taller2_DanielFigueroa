@@ -68,15 +68,23 @@ const password = document.querySelector("#password").value;;
 
 
 if(isLogin) {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+        var userN = userCredential.user;
 
+    })
+    .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+    });
 } else {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
         //signed in
-        var user = userCredential.user;
-        console.log(user);
+        var userN = userCredential.user;
+        console.log(userN);
 
-        db.collection('users').doc(user.uid).set({
+        db.collection('users').doc(userN.uid).set({
         user,
         email: email,
         password: password,
