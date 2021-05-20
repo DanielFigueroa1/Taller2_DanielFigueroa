@@ -10,12 +10,13 @@ authModal.innerHTML = `
                 <img src="./Imagenes/iconoUsuarioGrande.png">
                 <form id="register">
                     
+                <label class="modalRegister__frame__content__user" for="user">Usuario</label>
+                    <input class="user" id="user" type="text" placeholder="User name" name="user">
                     <label class="modalLogin__frame__content__user" for="user">Correo</label>
-                    <input class="productForm__input" id="email" type="email" placeholder="User e-mail" name="email">
+                    <input class="email" id="email" type="email" placeholder="User e-mail" name="email">
                     <label class="modalRegister__frame__content__user" for="password">Contrasena</label>
-                    <input class="productForm__input" id="password" type="password" placeholder="Password" name="password">
-                    <label class="modalRegister__frame__content__user" for="user">Usuario</label>
-                    <input class="productForm__input" id="user" type="text" placeholder="User name" name="user">
+                    <input class="password" id="password" type="password" placeholder="Password" name="password">
+                    
                     <button type="submit" class="button__img">Confirmar</button>
                 </form>
                 </div>
@@ -42,14 +43,14 @@ const openModalLogin = document.querySelector(".modal-Login-User");
 openModalRegister.addEventListener("click", function (){
     isLogin = false;
     modalRegister.querySelector(".modalRegister__frame__content__user").style.display= "block"; //borrando los inputes de register que usuario no tiene
-    modalRegister.querySelector(".productForm__input").style.display= "block";
+    modalRegister.querySelector(".user").style.display= "block";
     modalRegister.style.display = "block";
 });
 
 openModalLogin.addEventListener("click", function (){
     isLogin = true;
     modalRegister.querySelector(".modalRegister__frame__content__user").style.display= "none"; //borrando los inputes de register que usuario no tiene
-    modalRegister.querySelector(".productForm__input").style.display= "none";
+    modalRegister.querySelector(".user").style.display= "none";
     modalRegister.style.display = "block";
 });
 
@@ -61,25 +62,23 @@ authModal.addEventListener("submit", function (event) {
 event.preventDefault();
 console.log("submit") //prueba de funcionamiento button
 
-const user = document.querySelector(".user");
-const email = document.querySelector(".email");
-const password = document.querySelector(".password");
-
+const user = authModal.user.value;
+const email = authModal.email.value;
+const password = authModal.password.value;
 
 if(isLogin) {
 
 } else {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-        //signed in
+      .then((userCredential) => {
+        // Signed in 
         var user = userCredential.user;
         console.log(user);
 
         db.collection("users").doc(user.uid).set({
-        
+        user,
         email: email,
         password: password,
-        user,
         
         });
     })
