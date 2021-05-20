@@ -62,24 +62,24 @@ authModal.addEventListener("submit", function (event) {
 event.preventDefault();
 console.log("submit") //prueba de funcionamiento button
 
-const user = authModal.user.value;
-const email = authModal.email.value;
-const password = authModal.password.value;
+const user = document.querySelector("#user").value;
+const email = document.querySelector("#email").value;;
+const password = document.querySelector("#password").value;;
+
 
 if(isLogin) {
 
 } else {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        // Signed in 
+    .then((userCredential) => {
+        //signed in
         var user = userCredential.user;
         console.log(user);
 
-        db.collection("users").doc(user.uid).set({
+        db.collection('users').doc(user.uid).set({
         user,
         email: email,
         password: password,
-        
         });
     })
     .catch((error) => {
