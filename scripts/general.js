@@ -14,16 +14,20 @@ const firebaseConfig = {
   const db = firebase.firestore();
   const storage = firebase.storage();
 
+  let loggedUser = null;
+
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      console.log("onAuthStateChanged", user);
 
       db.collection("users").doc(user.uid).get().then(function (doc){
-        console.log(doc.data());
+        loggedUser = doc.data();
+        loggedUser.uid = user.uid;
+        userAuthChanged(true);
       });
 
       } else {
-      
+        loggedUser = null;
+        userAuthChanged(false);
     }
   });
   

@@ -17,6 +17,8 @@ authModal.innerHTML = `
                     <label class="modalRegister__frame__content__user" for="password">Contrasena</label>
                     <input class="password" id="password" type="password" placeholder="Password" name="password">
                     
+                    <p class="productForm__error"></p>
+
                     <button type="submit" class="button__img">Confirmar</button>
                 </form>
                 </div>
@@ -28,6 +30,7 @@ document.body.appendChild(authModal);
 const modalRegister = authModal.querySelector(".modalRegister");
 const regFields = modalRegister.querySelectorAll(".modalRegister__regField");
 const registerBtn = modalRegister.querySelector("modalRegister__register");
+const modalError = modalRegister.querySelector("productForm__error");
 let isLogin = true;
 
 modalRegister.addEventListener("submit", function (event) { 
@@ -69,13 +72,9 @@ const password = document.querySelector("#password").value;;
 
 if(isLogin) {
     firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-        var userN = userCredential.user;
-
-    })
     .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        console.log(error);
+        //modalError.innerText = error.message; //problemas con el innertext preguntarle al monitor
     });
 } else {
     firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -92,7 +91,23 @@ if(isLogin) {
     })
     .catch((error) => {
         console.log(error);
+        //modalError.innerText = error.message;
     });
 }
 });
 
+const authButtons = document.querySelector(".authButtons");
+authButtons.innerHTML = `
+<button class="authButtons__edit hidden showLoggedAdmin" href="/productForm.html"> Editar catalogo </button>
+<button class="authButtons__logout hidden showLoggedIn"> Logout </button>
+`;
+
+
+const authEdit = authButtons.querySelector(".authButtons__login");
+const authLogout = authButtons.querySelector(".authButtons__login");
+
+
+
+authLogout.addEventListener("click", function(){
+    firebase.auth().signOut();
+});

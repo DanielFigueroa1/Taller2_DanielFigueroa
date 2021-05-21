@@ -1597,8 +1597,6 @@ h4 {
 }
 
 a {
-  margin-left: -120px;
-  margin-right: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

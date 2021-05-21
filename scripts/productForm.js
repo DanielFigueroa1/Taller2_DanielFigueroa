@@ -104,7 +104,7 @@ productForm?.addEventListener("submit", function(event) {
 
 
 
-    /*fileRef.put(file).then(function(snapshot) { //preguntar que pasa con mis fotos de porque no se ven
+    /*fileRef.put(file).then(function(snapshot) { //preguntar que pasa con mis fotos de porque no se ven Viejo metodo de hacer fotos
         snapshot.ref.getDownloadURL().then((downloadURL) => {
             product.imageUrl = downloadURL;
             product.imageRef = snapshot.fullpath;
@@ -117,3 +117,7 @@ productForm?.addEventListener("submit", function(event) {
     //return; //debe quitarse esto para que se suba la info al firebase
 
 });
+
+/*if (!loggedUser || !loggedUser.admin) {
+    location.href="/shop.html";
+} Preguntar que sucede con esta funcion en mi caso ya que uso modales en la tienda*/ 

@@ -28,9 +28,11 @@
                 <a href="index.html">>Volver</a>
             </article>
 
+            <section class="authButtons"></section>
+
             <article class="barraNavShop__login">
                 <img src="./Imagenes/iconoUsuario.png">
-                <p class="modal-Login-User" >Ingresar</p>/<p class="modal-Register-User">Registrar</p>
+                <button class="modal-Login-User" >Ingresar</button>/<button class="modal-Register-User">Registrar</button>
             </article>
 
         </nav>
@@ -45,7 +47,7 @@
             </article>
         </section>
 
-        <form class="filters">
+        <form class="filters hidden showLoggedIn">
         <label for="type" class="productForm__label">Tipo de producto</label>
         <select id="type" class="productForm__input" name="type">
             <option value="">Selecciona una opción</option>
@@ -172,7 +174,7 @@
         <footer class="footer">
             <article class="footer__column">
                 <p class="footer__textrow1">
-                    <a href="#home">Home</a> <a href="#gallery">Galeria</a> <a href="#history">Historia</a> <a href="#about">About</a> <br>
+                    <a href="#home">Home</a><a href="#gallery">Galeria</a> <a href="#history">Historia</a> <a href="#about">About</a> <br>
                 </p>
                 <p class="footer__textrow2">
                     COPYRIGHT 2021-2022 CL Games
@@ -243,6 +245,7 @@
     <script src="./scripts/general.js"></script>
     <script src="./scripts/productForm.js"></script>
     <script src="./scripts/shop.js"></script>
+    <script src="./scripts/authUtils.js"></script>
     <script src="./scripts/authmodal.js"></script>
 </body>
 
