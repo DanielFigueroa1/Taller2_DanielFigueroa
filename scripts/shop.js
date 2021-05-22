@@ -1,5 +1,13 @@
 const list = document.querySelector(".list");
 
+const cart = [];
+const cartBtnNumber = document.querySelector(".cartBtn span");
+
+const cartFromLS = localStorage.getItem("store__cart");
+if(cartFromLS) {
+  cart = JSON.parse(cartFromLS);
+}
+
 console.log(loggedUser);
 
 setTimeout(function (){
@@ -23,8 +31,18 @@ const handleCollectionResult = (querySnapshot) => {
             <!--<p>${new Date(data.createdAt)}</p>-->
             </div>
             <button class="hidden showLoggedAdmin">Delete </button>
+            <button class="product__cartBtn">add to cart</button>
         `;
+
       document.querySelector(`.list-${data.type}`).appendChild(product);
+
+      const cartBtn = document.querySelector("product__cartBtn");
+      cartBtn.addEventListener("click", function () {
+        cart.push(data);
+        localStorage.setItem("store__cart",JSON.stringify(cart));
+        cartBtnNumber.innerText = cart.length;
+        console.log(cart.length, cartBtnNumber);
+      })
     });
   }
 
