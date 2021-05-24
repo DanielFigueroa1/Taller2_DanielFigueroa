@@ -28,14 +28,12 @@ const modalC = document.querySelector(".modalCart");
 
 buttonCart.addEventListener("click", ()=> {
     modalC.style.display = "block";
+    if(renderCart) renderCart();
 });
 
 const listC = document.querySelector(".modalCart__container");
 const totalP = document.querySelector(".cartTotal");
 const closeModalC = document.querySelector(".cancelCart");
-
-
-
 
 renderCart = () => {
     cart.forEach((data) => {
@@ -58,4 +56,5 @@ renderCart = () => {
 
 closeModalC.addEventListener("click", function(){
     modalC.style.display= "none";
+    listC.innerHTML = "";
 });

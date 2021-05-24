@@ -28,7 +28,7 @@ const handleCollectionResult = (querySnapshot) => {
 
       document.querySelector(`.list-${data.type}`).appendChild(product);
 
-      const cartBtn = document.querySelector(".product__cartBtn");
+      const cartBtn = product.querySelector(".product__cartBtn");
       cartBtn.addEventListener("click", function () {
         addToMyCart({
           ...data,

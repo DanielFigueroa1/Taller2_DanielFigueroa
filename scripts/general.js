@@ -55,7 +55,6 @@ const getMyCart = (uid) => {
   CART_COLLECTION.doc(uid).get().then(snapShot => {
     const data = snapShot.data();
     if(!data) return;
-    if(cartBtnNumber) cartBtnNumber.innerText = data.cart.length;
     cart = data.cart;
     if(renderCart) renderCart();
   });
