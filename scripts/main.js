@@ -21,7 +21,7 @@ imageNav__leftArrow.addEventListener("click", ()=>{
     }
 );
 
-announcement__imageButton.addEventListener("click", ()=>{
+/*announcement__imageButton.addEventListener("click", ()=>{
 
     if (imageAnnouncement < 1){
         imageAnnouncement = 0 
@@ -30,7 +30,7 @@ announcement__imageButton.addEventListener("click", ()=>{
     }
 
     hideImage();
-});
+});*/
 
 imageNav__content.addEventListener("click", ()=>{
     switch (imageNumber) {

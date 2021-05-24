@@ -14,7 +14,7 @@ cartModal.innerHTML = `
                 <h1>Carrito de compras</h1>
                 <div class="modalCart__container"></div>
                 <h1>Total</h1>
-                <h2 class="cartTotal"></h2>
+                <h1 class="cartTotal"></h1>
                 
                 <button type="submit" class="button__img cartCheck">Confirmar</button>
                 </div>
@@ -45,10 +45,10 @@ renderCart = () => {
 
         product.classList.add("product");
         product.innerHTML = `
-        <img class="modalRegister__frame__content__cancel deleteProduct" src="./Imagenes/publicidadCancel.png">
-        <p> ${data.name}</p>
-        <p>${data.price}</p>
-        <p>${new Date(data.createdAt)}</p>
+        <img class="deleteProduct" width="40px" src="./Imagenes/publicidadCancel.png">
+        <h3> ${data.name}</h3>
+        <h3>${data.price}</h3>
+        <h3>${new Date(data.createdAt)}</h3>
     `;
         listC.appendChild(product); //que ponga el producto en el container, el producto siendo un div
         total += data.price;
