@@ -56,6 +56,6 @@ const getMyCart = (uid) => {
     const data = snapShot.data();
     if(!data) return;
     cart = data.cart;
-    if(renderCart) renderCart();
+    //if(renderCart) renderCart(); eñ renderizado debe funcionar en el cart, no simulataneamente, porque es un modal
   });
 }

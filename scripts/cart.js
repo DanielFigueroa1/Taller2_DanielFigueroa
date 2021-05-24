@@ -16,7 +16,7 @@ cartModal.innerHTML = `
                 <h1>Total</h1>
                 <h2 class="cartTotal"></h2>
                 
-                <button type="submit" class="button__img">Confirmar</button>
+                <button type="submit" class="button__img cartCheck">Confirmar</button>
                 </div>
             </section>
         </section>`;
@@ -26,21 +26,24 @@ document.body.appendChild(cartModal);
 const buttonCart = document.querySelector(".cartBtn");
 const modalC = document.querySelector(".modalCart");
 
-buttonCart.addEventListener("click", ()=> {
+buttonCart.addEventListener("click", () => {
     modalC.style.display = "block";
-    if(renderCart) renderCart();
+    if (renderCart) renderCart();
 });
 
 const listC = document.querySelector(".modalCart__container");
 const totalP = document.querySelector(".cartTotal");
 const closeModalC = document.querySelector(".cancelCart");
+const cartCheck = document.querySelector(".cartCheck");
+
 
 renderCart = () => {
+    listC.innerHTML = "";
     cart.forEach((data) => {
-    const product = document.createElement("div");
-    
-    product.classList.add("product");
-    product.innerHTML = `
+        const product = document.createElement("div");
+
+        product.classList.add("product");
+        product.innerHTML = `
         <img class="modalRegister__frame__content__cancel deleteProduct" src="./Imagenes/publicidadCancel.png">
         <p> ${data.name}</p>
         <p>${data.price}</p>
@@ -54,7 +57,33 @@ renderCart = () => {
 
 }
 
-closeModalC.addEventListener("click", function(){
-    modalC.style.display= "none";
-    listC.innerHTML = "";
+closeModalC.addEventListener("click", function () {
+    modalC.style.display = "none";
+    total = 0;
 });
+
+cartCheck.addEventListener("click", function () {
+    const productIds = [];
+    cart.forEach((data) => {
+        productIds.push(data.id);
+    });
+
+    const order = {
+        date: Date.now(),
+        productIds: productIds,
+        total: total,
+        uid: loggedUser.uid,
+    }
+
+    ORDERS_COLLECTION.add(order)
+        .then(function (docRef) {
+            console.log(docRef.id);
+            CART_COLLECTION.doc(loggedUser.uid).set({
+                cart: []
+            });
+            modalC.style.display = "none";
+            alert("Se envio la orden");
+        });
+        
+});
+
