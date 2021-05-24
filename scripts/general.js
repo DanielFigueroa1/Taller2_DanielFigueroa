@@ -23,11 +23,39 @@ const firebaseConfig = {
         loggedUser = doc.data();
         loggedUser.uid = user.uid;
         userAuthChanged(true);
+        buttonsUsers.style.display = "none";
+
       });
+
+      getMyCart(user.uid);
 
       } else {
         loggedUser = null;
         userAuthChanged(false);
+        buttonsUsers.style.display = "flex";
+        cart = [];
     }
   });
-  
+
+let cart = [];
+const CART_COLLECTION = db.collection('cart');
+const ORDERS_COLLECTION = db.collection('orders');
+
+const addToMyCart = (product) => {
+  cart.push(product);
+  CART_COLLECTION.doc(loggedUser.uid).set({
+    cart,
+  });
+};
+
+let renderCart = null;
+
+const getMyCart = (uid) => {
+  CART_COLLECTION.doc(uid).get().then(snapShot => {
+    const data = snapShot.data();
+    if(!data) return;
+    if(cartBtnNumber) cartBtnNumber.innerText = data.cart.length;
+    cart = data.cart;
+    if(renderCart) renderCart();
+  });
+}

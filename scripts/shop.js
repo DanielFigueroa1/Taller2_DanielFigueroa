@@ -1,13 +1,5 @@
 const list = document.querySelector(".list");
 
-const cart = [];
-const cartBtnNumber = document.querySelector(".cartBtn span");
-
-const cartFromLS = localStorage.getItem("store__cart");
-if(cartFromLS) {
-  cart = JSON.parse(cartFromLS);
-}
-
 console.log(loggedUser);
 
 setTimeout(function (){
@@ -36,7 +28,7 @@ const handleCollectionResult = (querySnapshot) => {
 
       document.querySelector(`.list-${data.type}`).appendChild(product);
 
-      const cartBtn = document.querySelector("product__cartBtn");
+      const cartBtn = document.querySelector(".product__cartBtn");
       cartBtn.addEventListener("click", function () {
         cart.push(data);
         localStorage.setItem("store__cart",JSON.stringify(cart));

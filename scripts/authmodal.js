@@ -98,14 +98,15 @@ if(isLogin) {
 
 const authButtons = document.querySelector(".authButtons");
 authButtons.innerHTML = `
-<button class="authButtons__edit hidden showLoggedAdmin" href="/productForm.html"> Editar catalogo </button>
+
+<button class="authButtons__edit hidden showLoggedAdmin"  > <a href="productForm.html">Editar catalogo</a> </button>
+
 <button class="authButtons__logout hidden showLoggedIn"> Logout </button>
 `;
 
-
-const authEdit = authButtons.querySelector(".authButtons__login");
-const authLogout = authButtons.querySelector(".authButtons__login");
-
+const authEdit = document.querySelector(".authButtons__edit");
+const authLogout = document.querySelector(".authButtons__logout");
+const buttonsUsers = document.querySelector(".barraNavShop__login");
 
 
 authLogout.addEventListener("click", function(){

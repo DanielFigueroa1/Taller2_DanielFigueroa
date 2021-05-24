@@ -2,25 +2,25 @@ const list = document.querySelector(".cartList");
 
 let total = 0;
 
-const handleCollectionResult = (querySnapshot) => {
-    document.querySelectorAll('.list').forEach(item => item.innerHTML = '');
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      const product = document.createElement('div');
-      product.innerHTML = `
-        <div class="product" href="./product.html?id=${doc.id}&name=${data.name}">
-        <img class="shirt__product__img" src="${data.URLimagen}" alt="">
-        <div class="product__name">
-            <h3> ${data.name}</h3>
-            <h4 class ="product__price"> ${data.price}</h4>
-            </div>
-            <!--<p>${new Date(data.createdAt)}</p>-->
-            </div>
-            <button class="hidden showLoggedAdmin">Delete </button>
-            <button class="product__cartBtn">add to cart</button>
-        `;
+const cartModal = document.createElement("section");
+cartModal.classList.add("modal");
 
-      document.querySelector(`.list-${data.type}`).appendChild(product);
-      total += data.price;
-});
-}
+
+cartModal.innerHTML = `
+<section class="modalRegister modalCart"> 
+            <section class="modalRegister__frame">
+                <div class="modalRegister__frame__content modalCart__container">
+                    <img class="modalRegister__frame__content__cancel" src="./Imagenes/publicidadCancel.png">
+
+                
+                
+                </div>
+            </section>
+        </section>`;
+
+document.body.appendChild(cartModal);
+
+const buttonCart = document.querySelector(".cartBtn");
+const modalC = document.querySelector(".modalCart");
+
+button
