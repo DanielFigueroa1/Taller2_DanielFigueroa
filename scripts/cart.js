@@ -28,7 +28,7 @@ const modalC = document.querySelector(".modalCart");
 
 buttonCart.addEventListener("click", () => {
     modalC.style.display = "block";
-    if (renderCart) renderCart();
+    getMyCart(loggedUser.uid);
 });
 
 const listC = document.querySelector(".modalCart__container");
@@ -39,6 +39,7 @@ const cartCheck = document.querySelector(".cartCheck");
 
 renderCart = () => {
     listC.innerHTML = "";
+    total = 0;
     cart.forEach((data) => {
         const product = document.createElement("div");
 
@@ -59,13 +60,13 @@ renderCart = () => {
 
 closeModalC.addEventListener("click", function () {
     modalC.style.display = "none";
-    total = 0;
+    
 });
 
 cartCheck.addEventListener("click", function () {
     const productIds = [];
     cart.forEach((data) => {
-        productIds.push(data.id);
+        productIds.push({id:data.id, name:data.name});
     });
 
     const order = {
