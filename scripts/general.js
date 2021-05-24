@@ -43,6 +43,7 @@ const ORDERS_COLLECTION = db.collection('orders');
 
 const addToMyCart = (product) => {
   cart.push(product);
+  console.log("se agrego");
   CART_COLLECTION.doc(loggedUser.uid).set({
     cart,
   });
