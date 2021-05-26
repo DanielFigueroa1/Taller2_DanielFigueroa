@@ -10,12 +10,14 @@
     
     
     &__textrow1{
+        display: flex;
         font-family: Minecraft;
         font-style: normal;
         font-size: 18px;
         align-items: center;
         text-align: center;
         color: white;
+        justify-content: space-around;
     }
 
     &__textrow2{

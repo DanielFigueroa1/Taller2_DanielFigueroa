@@ -11,6 +11,25 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        
+        div{
+            display: flex;
+
+            width: 140px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            h4{
+                margin-bottom: 5px;
+            }
+
+            button{
+                display: flex;
+                justify-content: center;
+                max-width: 100px;
+            }
+        }
     }
 
     &__frame{

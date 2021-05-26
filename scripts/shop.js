@@ -1,4 +1,73 @@
+const shop__leftArrow = document.querySelector(".imageNav__leftArrow"); //const no cambia, var si, referenciar la imagen
+const navShop__frame__row__content = document.querySelector(".imageNav__content");
+const shop__rightArrow = document.querySelector(".imageNav__rightArrow");
+
 const list = document.querySelector(".list");
+
+let imageNumberShop = 0; //inicio imagen contenido
+
+/*shop__leftArrow.addEventListener("click", ()=>{
+
+  if (imageNumberShop < 0){
+      imageNumberShop = 4
+  } else {
+      imageNumberShop--;
+  }
+  
+  manageImage();
+  });
+
+imageNav__content.addEventListener("click", ()=>{
+  switch (imageNumberShop) {
+      case 0:
+      window.location.hash = "#shirts";
+      break;
+      case 1:
+          window.location.hash = "#sweater";
+          break;
+      case 2:
+          window.location.hash = "#sticker";
+          break;
+      case 3:
+          window.location.hash = "#pin";
+          break;
+      case 4:
+          window.location.hash = "#mugh";
+      }
+  }
+)
+
+shop__rightArrow.addEventListener("click", ()=>{
+
+  if (imageNumberShop++ < 4){
+      
+  } else {
+      imageNumberShop = 0;
+  }
+  
+  manageImage();
+  }); 
+
+  function manageImage (){
+
+    switch (imageNumberShop) {
+        case 0:
+          navShop__frame__row__content.setAttribute("src","./Imagenes/iconoIntroGrande");
+        break;
+        case 1:
+          navShop__frame__row__content.setAttribute("src","./Imagenes/iconoIntroGrande2.png");
+            break;
+        case 2:
+          navShop__frame__row__content.setAttribute("src","./Imagenes/iconoIntroGrande3.png");
+            break;
+        case 3:
+          navShop__frame__row__content.setAttribute("src","./Imagenes/iconoIntroGrande4.png");
+        case 4:
+          navShop__frame__row__content.setAttribute("src","./Imagenes/iconoIntroGrande5.png");
+    
+    }
+
+} //fin cambio de imagen nav}*/
 
 console.log(loggedUser);
 

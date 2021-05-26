@@ -730,6 +730,9 @@
 }
 
 .footer__textrow1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-family: Minecraft;
   font-style: normal;
   font-size: 18px;
@@ -738,6 +741,8 @@
           align-items: center;
   text-align: center;
   color: white;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .footer__textrow2 {
@@ -889,7 +894,22 @@
   width: 100%;
   height: 538px;
   background: 100%, 100%;
-  background-image: url("../Imagenes/fondoTienda.png");
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(78.12%, rgba(0, 0, 0, 0.1)), color-stop(94.79%, #000000)), url("../Imagenes/fondoTienda.png");
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 78.12%, #000000 94.79%), url("../Imagenes/fondoTienda.png");
+}
+
+.navShop__leftArrow {
+  max-width: 38px;
+  max-height: 60px;
+  width: 100%;
+  height: 100%;
+}
+
+.navShop__rightArrow {
+  max-width: 38px;
+  max-height: 60px;
+  width: 100%;
+  height: 100%;
 }
 
 .navShop__frame {
@@ -977,6 +997,37 @@
           justify-content: center;
 }
 
+.shirt .list div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 160px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.shirt .list div h4 {
+  margin-bottom: 5px;
+}
+
+.shirt .list div button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 100px;
+}
+
 .shirt__frame {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1058,6 +1109,37 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.sweater .list div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 140px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sweater .list div h4 {
+  margin-bottom: 5px;
+}
+
+.sweater .list div button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 100px;
 }
 
 .sweater__frame {
@@ -1143,6 +1225,47 @@
           justify-content: center;
 }
 
+.sticker .list div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 160px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.sticker .list div .shirt__product__img {
+  width: 150px;
+}
+
+.sticker .list div h3 {
+  width: 200px;
+}
+
+.sticker .list div h4 {
+  margin-bottom: 5px;
+}
+
+.sticker .list div button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 100px;
+}
+
 .sticker__frame {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1224,6 +1347,45 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.pin .list div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 140px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pin .list div .shirt__product__img {
+  width: 200px;
+}
+
+.pin .list div h3 {
+  margin-top: -20px;
+}
+
+.pin .list div h4 {
+  margin-bottom: 5px;
+}
+
+.pin .list div button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 100px;
 }
 
 .pin__frame {
@@ -1310,6 +1472,37 @@
           justify-content: center;
 }
 
+.mug .list div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 140px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mug .list div h4 {
+  margin-bottom: 5px;
+}
+
+.mug .list div button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 100px;
+}
+
 .mug__frame {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1383,6 +1576,97 @@
   font-family: Minecraft;
   font-style: normal;
   font-size: 28px;
+}
+
+.cartBtn {
+  max-height: 38px;
+  height: 100%;
+  background-color: yellow;
+  outline: none;
+  border: black solid 4px;
+  -webkit-box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+          box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+  font-family: Minecraft;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.modal-Register-User {
+  max-height: 38px;
+  height: 100%;
+  background-color: yellow;
+  outline: none;
+  border: black solid 4px;
+  -webkit-box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+          box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+  font-family: Minecraft;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.modal-Login-User {
+  max-height: 38px;
+  height: 100%;
+  background-color: yellow;
+  outline: none;
+  border: black solid 4px;
+  -webkit-box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+          box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+  font-family: Minecraft;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.authButtons__edit {
+  max-height: 38px;
+  height: 100%;
+  background-color: yellow;
+  outline: none;
+  border: black solid 4px;
+  -webkit-box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+          box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+  font-family: Minecraft;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.authButtons__logout {
+  max-height: 38px;
+  height: 100%;
+  background-color: yellow;
+  outline: none;
+  border: black solid 4px;
+  -webkit-box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+          box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+  font-family: Minecraft;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.showLoggedAdmin {
+  max-height: 38px;
+  height: 100%;
+  background-color: yellow;
+  outline: none;
+  border: black solid 1px;
+  -webkit-box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+          box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+  font-family: Minecraft;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.product__cartBtn {
+  max-height: 38px;
+  height: 100%;
+  background-color: yellow;
+  outline: none;
+  border: black solid 1px;
+  -webkit-box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+          box-shadow: inset 0px 8px 1px 0 rgba(255, 165, 0, 0.5);
+  font-family: Minecraft;
+  font-style: normal;
+  font-size: 14px;
 }
 
 .modalLogin {
@@ -1593,7 +1877,6 @@ body {
 }
 
 html {
-  max-width: 1000px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1617,6 +1900,15 @@ h3 {
   font-weight: 500;
   font-size: 18px;
   line-height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 h4 {
@@ -1626,6 +1918,15 @@ h4 {
   font-size: 14px;
   line-height: 20px;
   margin-top: -15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 a {

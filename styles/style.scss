@@ -43,7 +43,8 @@ body{
 }
 
 html{
-    max-width: 1000px;
+    
+    
     justify-content: center;
     align-items: center;
     background-color: black; 
@@ -59,11 +60,15 @@ html{
 }
 
 h3{
+    
     font-family: Minecraft;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
-    line-height: 20px;  
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 h4{
     font-family: Minecraft;
@@ -72,6 +77,9 @@ h4{
     font-size: 14px;
     line-height: 20px;
     margin-top: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 a{

@@ -10,6 +10,32 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        
+        div{
+            display: flex;
+            width: 160px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: 2px;
+            margin-left: 2px;
+
+            .shirt__product__img{
+                width: 150px;
+            }
+            h3{
+                width: 200px;
+            }
+            h4{
+                margin-bottom: 5px;
+            }
+
+            button{
+                display: flex;
+                justify-content: center;
+                max-width: 100px;
+            }
+        }
     }
     
     &__frame{
